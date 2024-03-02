@@ -94,8 +94,6 @@ Request.init(
 );
 
 
-Request.belongsTo(User)
-
 // Request.validPassword = (password: string, hash: string) => {
 //     return compareSync(password, hash);
 // };

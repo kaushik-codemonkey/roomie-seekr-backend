@@ -5,6 +5,7 @@ import { forgotPasswordMailTemplate, mailTemplate } from "./mailTemplate";
 const transporter = nodemailer.createTransport({
   service: emailConfig.emailService,
   auth: {
+    // TODO: have to fix this - it doesn't work rn due to the auth issue - email and pass missmatch
     user: emailConfig.emailUser,
     pass: emailConfig.emailPassword,
   },

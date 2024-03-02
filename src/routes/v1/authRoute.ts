@@ -11,6 +11,7 @@ const authRouter = Router();
 
 authRouter.post("/register", validateRequest(registerSchema), registerUser);
 authRouter.post("/login", validateRequest(loginSchema), loginUser);
+// These two API's doensn't work right now
 authRouter.post("/forgot-password", forgotPassword);
 authRouter.post("/reset-password", resetPassword);
 

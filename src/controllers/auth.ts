@@ -81,6 +81,7 @@ export const forgotPassword = async (
     const { email } = req.body;
 
     let user = await findOneUser({ email });
+    console.log({ user, email })
     if (!user) {
       throw new ApiError(400, "Email id is incorrect");
     }

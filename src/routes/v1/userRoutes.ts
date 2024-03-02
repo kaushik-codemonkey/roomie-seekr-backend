@@ -7,6 +7,7 @@ const userRouter = Router();
 
 userRouter.patch("/", requireUser, validateRequest(updateSchema), updateUser);
 userRouter.get("/", requireUser, getUserData);
+// TODO: Api to check if username is already taken
 
 export default userRouter;
 

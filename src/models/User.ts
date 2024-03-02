@@ -9,9 +9,10 @@ class User extends Model {
   public email!: string;
   public password!: string;
   public first_name!: string;
-  public last_name!: string;
+  public last_name: string;
   public mobile!: string;
   public deleted!: boolean;
+  public city!: string;
 
   // timestamps!
   public readonly created_at!: Date;
@@ -47,10 +48,12 @@ User.init(
     },
     last_name: {
       type: DataTypes.STRING,
+      allowNull: true,
       defaultValue: "",
     },
     mobile: {
       type: DataTypes.STRING,
+      unique: true,
       defaultValue: "",
     },
     deleted: {
@@ -76,5 +79,7 @@ User.hasMany(Request, {
   onDelete: "RESTRICT",
   onUpdate: "CASCADE"
 })
+
+Request.belongsTo(User)
 
 export default User;
